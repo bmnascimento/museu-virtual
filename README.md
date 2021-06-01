@@ -12,5 +12,8 @@ Nessa sala, apresentaremos imagens geradas por computadores, seja por sua simetr
 
 # Materiais de referência
 * [Tutorial da documentação](https://docs.godotengine.org/en/stable/getting_started/step_by_step/intro_to_the_editor_interface.html)
+* [Tutorial de como fazer um FPS da documentação](https://docs.godotengine.org/en/stable/tutorials/3d/fps_tutorial/part_one.html)
+* [Informações sobre 3D na documentação](https://docs.godotengine.org/en/stable/tutorials/3d/introduction_to_3d.html)
 * [Tutorial em vídeo sobre Godot no geral](https://www.youtube.com/watch?v=iDEcP8Mc-7s&list=PLS9MbmO_ssyDk79j9ewONxV88fD5e_o5d&index=1)
 * [Tutorial em vídeo sobre 3D no Godot](https://www.youtube.com/watch?v=VeCrE-ge8xM&list=PLda3VoSoc_TSBBOBYwcmlamF1UrjVtccZ)
+* [Tutorial em vídeo sobre como criar níveis em 3D no Godot](https://www.youtube.com/watch?v=49awsu1VJbo)

@@ -1,0 +1,88 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://nodes/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://textures/mossy_rock/mossy_rock_rough_1k.jpg" type="Texture" id=2]
+[ext_resource path="res://textures/mossy_rock/mossy_rock_nor_1k.jpg" type="Texture" id=3]
+[ext_resource path="res://textures/mossy_rock/mossy_rock_diff_1k.jpg" type="Texture" id=4]
+[ext_resource path="res://textures/mossy_rock/mossy_rock_disp_1k.jpg" type="Texture" id=5]
+[ext_resource path="res://textures/mossy_rock/mossy_rock_ao_1k.jpg" type="Texture" id=6]
+
+[sub_resource type="PlaneMesh" id=3]
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 0.301961, 0.443137, 0.341176, 1 )
+
+[sub_resource type="BoxShape" id=5]
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.270588, 0.188235, 0.662745, 1 )
+
+[sub_resource type="BoxShape" id=6]
+
+[sub_resource type="SphereShape" id=7]
+
+[sub_resource type="SphereMesh" id=8]
+
+[sub_resource type="SpatialMaterial" id=9]
+albedo_texture = ExtResource( 4 )
+metallic_texture = ExtResource( 5 )
+roughness_texture = ExtResource( 2 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 3 )
+ao_enabled = true
+ao_light_affect = 0.0
+ao_texture = ExtResource( 6 )
+ao_on_uv2 = false
+ao_texture_channel = 0
+
+[node name="World" type="Spatial"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.322143, 0 )
+
+[node name="Sun" type="DirectionalLight" parent="."]
+transform = Transform( -0.425973, 0.573419, -0.699813, -0.00787197, 0.771121, 0.63664, 0.904702, 0.2767, -0.323963, -6.945, 13.84, -6.8624 )
+shadow_enabled = true
+
+[node name="Plane" type="StaticBody" parent="."]
+transform = Transform( 100, 0, 0, 0, 1, 0, 0, 0, 100, 0, 0, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MeshInstance" type="MeshInstance" parent="Plane"]
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Plane"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+shape = SubResource( 5 )
+
+[node name="Cube" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 2.06, -1.326, 0, 3.72642 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Cube" type="MeshInstance" parent="Cube"]
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Cube"]
+shape = SubResource( 6 )
+
+[node name="TexturedBall" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 4, 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape" type="CollisionShape" parent="TexturedBall"]
+shape = SubResource( 7 )
+
+[node name="MeshInstance" type="MeshInstance" parent="TexturedBall"]
+mesh = SubResource( 8 )
+material/0 = SubResource( 9 )
