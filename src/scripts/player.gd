@@ -1,18 +1,21 @@
 extends KinematicBody
 
 const GRAVITY = -24.8
-var vel = Vector3()
-const MAX_SPEED = 5
+const MAX_WALKING_SPEED = 5
+const MAX_RUNNING_SPEED = 10
 const JUMP_SPEED = 8
 const ACCEL = 5
 const DEACCEL= 16
 const MAX_SLOPE_ANGLE = 40
 var MOUSE_SENSITIVITY = 0.05
 
+var dir = Vector3()
+var vel = Vector3()
+var max_speed = MAX_WALKING_SPEED
+
 var camera
 var pivot
 
-var dir = Vector3()
 
 func _ready():
 	camera = $Pivot/Camera
@@ -44,6 +47,11 @@ func process_input(_delta):
 	dir += -cam_xform.basis.z * input_movement_vector.y
 	dir += cam_xform.basis.x * input_movement_vector.x
 	
+	if Input.is_action_pressed("run"):
+		max_speed = MAX_RUNNING_SPEED
+	else:
+		max_speed = MAX_WALKING_SPEED
+	
 	if is_on_floor():
 		if Input.is_action_just_pressed("jump"):
 			vel.y = JUMP_SPEED
@@ -64,7 +72,7 @@ func process_movement(delta):
 	hvel.y = 0
 	
 	var target = dir
-	target *= MAX_SPEED
+	target *= max_speed
 	
 	var accel
 	if dir.dot(hvel) > 0:
