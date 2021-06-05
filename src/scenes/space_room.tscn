@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://nodes/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://nodes/portal.tscn" type="PackedScene" id=2]
@@ -8,7 +8,10 @@ background_color = Color( 1, 1, 1, 1 )
 ambient_light_energy = 0.0
 ambient_light_sky_contribution = 0.0
 
-[node name="Entrance" type="Spatial"]
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.211765, 0.207843, 0.482353, 1 )
+
+[node name="SpaceRoom" type="Spatial"]
 
 [node name="Player" parent="." groups=[
 "player",
@@ -42,15 +45,8 @@ invert_faces = true
 width = 20.0
 height = 8.0
 depth = 20.0
+material = SubResource( 2 )
 
 [node name="Portal" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 10 )
-room = "res://scenes/art_room.tscn"
-
-[node name="Portal2" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10 )
-room = "res://scenes/space_room.tscn"
-
-[node name="Portal3" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 10 )
-room = "res://scenes/computer_room.tscn"
+room = "res://scenes/entrance.tscn"

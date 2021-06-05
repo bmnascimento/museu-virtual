@@ -8,7 +8,7 @@ background_color = Color( 1, 1, 1, 1 )
 ambient_light_energy = 0.0
 ambient_light_sky_contribution = 0.0
 
-[node name="Entrance" type="Spatial"]
+[node name="ComputerRoom" type="Spatial"]
 
 [node name="Player" parent="." groups=[
 "player",
@@ -44,13 +44,5 @@ height = 8.0
 depth = 20.0
 
 [node name="Portal" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 10 )
-room = "res://scenes/art_room.tscn"
-
-[node name="Portal2" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10 )
-room = "res://scenes/space_room.tscn"
-
-[node name="Portal3" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 10 )
-room = "res://scenes/computer_room.tscn"
+room = "res://scenes/entrance.tscn"
