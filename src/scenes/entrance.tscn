@@ -36,7 +36,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 6, 5 )
 omni_range = 14.2
 
 [node name="Room" type="CSGBox" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.530192, 3.16398, -0.105089 )
 use_collision = true
 invert_faces = true
 width = 20.0
