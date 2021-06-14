@@ -1,4 +1,4 @@
-name: CI
+name: Release
 
 on:
   pull_request:
@@ -19,7 +19,7 @@ jobs:
         uses: josephbmanley/build-godot-action@v1.4.1
         with:
           name: museu-virtual-windows
-          preset: "Windows Desktop"
+          preset: "windows"
           subdirectory: "windows"
           package: true
           projectDir: "src"
@@ -28,7 +28,7 @@ jobs:
         uses: josephbmanley/build-godot-action@v1.4.1
         with:
           name: museu-virtual-linux
-          preset: "Linux/X11"
+          preset: "linux"
           subdirectory: "linux"
           package: true
           projectDir: "src"
