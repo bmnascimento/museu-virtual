@@ -1,8 +1,6 @@
 name: CI
 
 on:
-  push:
-    branches: [ main ]
   pull_request:
     branches: [ main ]
     
@@ -20,8 +18,8 @@ jobs:
         id: buildw
         uses: josephbmanley/build-godot-action@v1.4.1
         with:
-          name: museu-virtual
-          preset: windows
+          name: museu-virtual-windows
+          preset: "Windows Desktop"
           subdirectory: "windows"
           package: true
           projectDir: "src"
@@ -29,8 +27,8 @@ jobs:
         id: buildl
         uses: josephbmanley/build-godot-action@v1.4.1
         with:
-          name: museu-virtual
-          preset: linux
+          name: museu-virtual-linux
+          preset: "Linux/X11"
           subdirectory: "linux"
           package: true
           projectDir: "src"
