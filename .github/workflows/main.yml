@@ -13,23 +13,28 @@ jobs:
   build:
     runs-on: ubuntu-latest
     
-    # Platforms to export to, can be [linux, windows, mac]
-    strategy:
-      matrix:
-        platform: [linux, windows]
-        
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
-      - name: Build
-        id: build
+      - name: Build Windows
+        id: buildw
         uses: josephbmanley/build-godot-action@v1.4.1
         with:
           name: museu-virtual
-          preset: ${{ matrix.platform }}
+          preset: windows
+          projectDir: src
+      - name: Build Linux
+        id: buildl
+        uses: josephbmanley/build-godot-action@v1.4.1
+        with:
+          name: museu-virtual
+          preset: linux
+          projectDir: src
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          files: ${{ github.workspace }}/${{ steps.build.outputs.build }}
+          files: |
+            ${{ github.workspace }}/${{ steps.buildw.outputs.build }}
+            ${{ github.workspace }}/${{ steps.buildl.outputs.build }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
