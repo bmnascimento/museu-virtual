@@ -22,19 +22,23 @@ jobs:
         with:
           name: museu-virtual
           preset: windows
-          projectDir: src
+          subdirectory: "windows"
+          package: true
+          projectDir: "src"
       - name: Build Linux
         id: buildl
         uses: josephbmanley/build-godot-action@v1.4.1
         with:
           name: museu-virtual
           preset: linux
-          projectDir: src
+          subdirectory: "linux"
+          package: true
+          projectDir: "src"
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
           files: |
-            ${{ github.workspace }}/${{ steps.buildw.outputs.build }}
-            ${{ github.workspace }}/${{ steps.buildl.outputs.build }}
+            ${{ github.workspace }}/${{ steps.buildw.outputs.artifact }}
+            ${{ github.workspace }}/${{ steps.buildl.outputs.artifact }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
