@@ -14,6 +14,11 @@ config/name="Museu Virtual"
 run/main_scene="res://scenes/entrance.tscn"
 config/icon="res://images/logo.png"
 
+[global]
+
+distance=false
+view=false
+
 [input]
 
 move_forward={

@@ -49,7 +49,7 @@ room = "res://scenes/art_room.tscn"
 
 [node name="Portal2" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10 )
-room = "res://scenes/space_room.tscn"
+room = "res://scenes/space-room/space_room.tscn"
 
 [node name="Portal3" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 10 )
