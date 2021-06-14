@@ -21,7 +21,6 @@ jobs:
           name: museu-virtual-windows
           preset: "windows"
           subdirectory: "windows"
-          package: true
           projectDir: "src"
       - name: Build Linux
         id: buildl
@@ -39,5 +38,4 @@ jobs:
           automatic_release_tag: "latest"
           prerelease: true
           files: |
-            ${{ github.workspace }}/${{ steps.buildw.outputs.artifact }}
             ${{ github.workspace }}/${{ steps.buildl.outputs.artifact }}
