@@ -52,6 +52,12 @@ run={
  ]
 }
 
+[layer_names]
+
+3d_physics/layer_1="Player"
+3d_physics/layer_2="Enviroment"
+3d_physics/layer_3="Art"
+
 [physics]
 
 common/enable_pause_aware_picking=true
