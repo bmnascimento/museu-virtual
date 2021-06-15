@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://nodes/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://nodes/portal.tscn" type="PackedScene" id=2]
 [ext_resource path="res://images/icon.png" type="Texture" id=3]
 [ext_resource path="res://scenes/art_room/images/14bis2.glb" type="PackedScene" id=4]
+[ext_resource path="res://scenes/art_room/scripts/CSGBox.gd" type="Script" id=5]
+[ext_resource path="res://scenes/art_room/arts/art1/art1.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Environment" id=1]
 background_color = Color( 1, 1, 1, 1 )
@@ -20,12 +22,16 @@ bias = 1.5
 normal_bias = 0.0
 propagation = 0.7
 
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 1, 3, 2 )
+
 [node name="ComputerRoom" type="Spatial"]
 
 [node name="Player" parent="." groups=[
 "player",
 ] instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9 )
+collision_mask = 2
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 1 )
@@ -85,8 +91,28 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 4, 2 )
 width = 0.5
 height = 4.0
 depth = 4.0
+script = ExtResource( 5 )
+
+[node name="Area" type="Area" parent="Node/CSGBox"]
+collision_layer = 2
+
+[node name="CollisionShape" type="CollisionShape" parent="Node/CSGBox/Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, 0 )
+shape = SubResource( 3 )
+
+[node name="Sprite3D" type="Sprite3D" parent="Node/CSGBox/Area"]
+transform = Transform( 1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 0.5, 0, 0 )
+texture = ExtResource( 3 )
 
 [node name="Spatial2" type="Spatial" parent="."]
 
 [node name="14bis2" parent="Spatial2" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0 )
+
+[node name="Arts" type="Node" parent="."]
+
+[node name="art1" parent="Arts" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 4, -10 )
+collision_layer = 4
+
+[connection signal="body_entered" from="Arts/art1" to="Player" method="_on_art1_body_entered"]
