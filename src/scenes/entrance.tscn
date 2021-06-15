@@ -57,13 +57,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -1, 10 )
 room = "res://scenes/computer_room.tscn"
 
 [node name="LogoArt" type="Sprite3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 6, 9.8 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 5.6, 9.8 )
 texture = ExtResource( 3 )
 
 [node name="LogoSpace" type="Sprite3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 9.8 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.6, 9.8 )
 texture = ExtResource( 5 )
 
 [node name="LogoComputer" type="Sprite3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 6, 9.8 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 5.5, 9.8 )
 texture = ExtResource( 4 )
