@@ -1,0 +1,42 @@
+name: Release
+
+on:
+#  pull_request:
+#    branches: [ main ]
+    
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - name: Build Windows
+        id: buildw
+        uses: josephbmanley/build-godot-action@v1.4.1
+        with:
+          name: museu-virtual-windows
+          preset: "windows"
+          subdirectory: "windows"
+          package: true
+          projectDir: "src"
+#      - name: Build Linux
+#        id: buildl
+#        uses: josephbmanley/build-godot-action@v1.4.1
+#        with:
+#          name: museu-virtual-linux
+#          preset: "linux"
+#          subdirectory: "linux"
+#          package: true
+#          projectDir: "src"
+      - name: Release
+        uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: true
+          files: |
+            ${{ github.workspace }}/${{ steps.buildw.outputs.artifact }}
