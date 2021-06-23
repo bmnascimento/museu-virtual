@@ -48,7 +48,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[connection signal="body_entered" from="." to="." method="_on_art1_body_entered"]
 [connection signal="body_entered" from="." to="WindowDialog" method="_on_art1_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_art1_body_entered"]
 [connection signal="draw" from="WindowDialog/RichTextLabel" to="." method="_on_RichTextLabel_draw"]
 [connection signal="ready" from="WindowDialog/RichTextLabel" to="." method="_on_RichTextLabel_ready"]
