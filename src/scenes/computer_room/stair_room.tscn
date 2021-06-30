@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/computer_room/models/stair.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/computer_room/triangle_room.gd" type="Script" id=2]
+
+[node name="TriangleRoom" type="Spatial"]
+script = ExtResource( 2 )
+room = "res://scenes/computer_room.tscn"
+
+[node name="stair" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0 )
+
+[node name="Camera2" type="Camera" parent="stair"]
+transform = Transform( 0.889301, -0.510787, 0.714662, 0, 1.01696, 0.726843, -0.878433, -0.517106, 0.723503, 67.9474, 68.437, 66.1021 )
+projection = 1
+size = 10.02
+near = 1.13
+
+[connection signal="ready" from="." to="." method="_on_TriangleRoom_ready"]
