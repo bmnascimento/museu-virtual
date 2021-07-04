@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/The Girl From Ipanema (Instrumental) (mp3cut.net).mp3-a4ee09b6afa025bc20920afcf6efa936.mp3str"
+
+[deps]
+
+source_file="res://scenes/art_room/sound/The Girl From Ipanema (Instrumental) (mp3cut.net).mp3"
+dest_files=[ "res://.import/The Girl From Ipanema (Instrumental) (mp3cut.net).mp3-a4ee09b6afa025bc20920afcf6efa936.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,18 +1,25 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://nodes/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://nodes/portal.tscn" type="PackedScene" id=2]
-[ext_resource path="res://images/icon.png" type="Texture" id=3]
-[ext_resource path="res://scenes/art_room/images/14bis2.glb" type="PackedScene" id=4]
-[ext_resource path="res://scenes/art_room/scripts/CSGBox.gd" type="Script" id=5]
+[ext_resource path="res://scenes/art_room/arts/art2/art2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/art_room/arts/art3/art3.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/art_room/arts/art4/art4.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/art_room/arts/art1/art1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/art_room/sound/The Girl From Ipanema (Instrumental) (mp3cut.net).mp3" type="AudioStream" id=7]
+[ext_resource path="res://scenes/art_room/arts/art5/art5.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/art_room/arts/art6/art6.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/art_room/arts/art7/art7.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/art_room/arts/art8/art8.tscn" type="PackedScene" id=11]
 
 [sub_resource type="Environment" id=1]
 background_color = Color( 1, 1, 1, 1 )
 ambient_light_energy = 0.0
 ambient_light_sky_contribution = 0.0
 
-[sub_resource type="GIProbeData" id=2]
+[sub_resource type="SpatialMaterial" id=2]
+
+[sub_resource type="GIProbeData" id=3]
 bounds = AABB( -15, -10, -14, 30, 20, 28 )
 cell_size = 0.234375
 to_cell_xform = Transform( 4.26667, 0, 0, 0, 4.26667, 0, 0, 0, 4.26667, 64, 42.6667, 59.7333 )
@@ -22,13 +29,10 @@ bias = 1.5
 normal_bias = 0.0
 propagation = 0.7
 
-[sub_resource type="BoxShape" id=3]
-extents = Vector3( 1, 3, 2 )
-
-[node name="ComputerRoom" type="Spatial"]
+[node name="ArtRoom" type="Spatial"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -18 )
 collision_mask = 2
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -37,80 +41,118 @@ environment = SubResource( 1 )
 [node name="Lights" type="Spatial" parent="."]
 
 [node name="OmniLight2" type="OmniLight" parent="Lights"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 6, -5 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 6, -5 )
+omni_range = 14.2
+
+[node name="OmniLightEntrada" type="OmniLight" parent="Lights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 18 )
+omni_range = 14.2
+
+[node name="OmniLightEntrada2" type="OmniLight" parent="Lights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, -18 )
+omni_range = 14.2
+
+[node name="OmniLight7" type="OmniLight" parent="Lights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 6, -14 )
 omni_range = 14.2
 
 [node name="OmniLight" type="OmniLight" parent="Lights"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 6, -5 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 6, -5 )
+omni_range = 14.2
+
+[node name="OmniLight8" type="OmniLight" parent="Lights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 6, -14 )
 omni_range = 14.2
 
 [node name="OmniLight3" type="OmniLight" parent="Lights"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 6, 5 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 6, 5 )
+omni_range = 14.2
+
+[node name="OmniLight6" type="OmniLight" parent="Lights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 6, 15 )
 omni_range = 14.2
 
 [node name="OmniLight4" type="OmniLight" parent="Lights"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 6, 5 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 6, 5 )
 omni_range = 14.2
+
+[node name="OmniLight5" type="OmniLight" parent="Lights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 6, 15 )
+omni_range = 14.2
+
+[node name="Meio" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
+use_collision = true
+width = 6.0
+height = 8.0
+depth = 28.0
+material = SubResource( 2 )
 
 [node name="Room" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
 use_collision = true
 invert_faces = true
-width = 20.0
+width = 30.0
 height = 8.0
-depth = 20.0
+depth = 40.0
 
 [node name="Portal" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20 )
 room = "res://scenes/entrance.tscn"
 
 [node name="Portal2" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20 )
 room = "res://scenes/entrance.tscn"
 
 [node name="GIProbe" type="GIProbe" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.509256, 3.255, -0.0839996 )
 visible = false
-extents = Vector3( 15, 10, 14 )
-data = SubResource( 2 )
-
-[node name="Spatial" type="Spatial" parent="."]
-
-[node name="Sprite3D" type="Sprite3D" parent="Spatial"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.50926, 3.255, 9.916 )
-texture = ExtResource( 3 )
+extents = Vector3( 20, 10, 20 )
+data = SubResource( 3 )
 
 [node name="Node" type="Node" parent="."]
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Node"]
 
-[node name="CSGBox" type="CSGBox" parent="Node"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 4, 2 )
-width = 0.5
-height = 4.0
-depth = 4.0
-script = ExtResource( 5 )
-
-[node name="Area" type="Area" parent="Node/CSGBox"]
-collision_layer = 2
-
-[node name="CollisionShape" type="CollisionShape" parent="Node/CSGBox/Area"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -1, 0 )
-shape = SubResource( 3 )
-
-[node name="Sprite3D" type="Sprite3D" parent="Node/CSGBox/Area"]
-transform = Transform( 1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 0.5, 0, 0 )
-texture = ExtResource( 3 )
-
-[node name="Spatial2" type="Spatial" parent="."]
-
-[node name="14bis2" parent="Spatial2" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0 )
-
 [node name="Arts" type="Node" parent="."]
 
-[node name="art1" parent="Arts" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 4, -10 )
-collision_layer = 4
+[node name="parede1" type="Spatial" parent="Arts"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15, 0, 6.55671e-07 )
 
-[connection signal="body_entered" from="Arts/art1" to="Player" method="_on_art1_body_entered"]
+[node name="Mona" parent="Arts/parede1" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 3, 0 )
+
+[node name="art2" parent="Arts/parede1" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 3, 0 )
+
+[node name="Parede 2" type="Spatial" parent="Arts"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3, 0, -1.31134e-07 )
+
+[node name="art1" parent="Arts/Parede 2" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 3, 0 )
+
+[node name="art2" parent="Arts/Parede 2" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 3, 0 )
+
+[node name="Parede 3" type="Spatial" parent="Arts"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3, 0, 9.53674e-07 )
+
+[node name="art1" parent="Arts/Parede 3" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 4, -2.38419e-07 )
+
+[node name="art2" parent="Arts/Parede 3" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 4, -7.15256e-07 )
+
+[node name="Parede 4" type="Spatial" parent="Arts"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -15, 0, -1.31134e-07 )
+
+[node name="art1" parent="Arts/Parede 4" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 4, 0 )
+
+[node name="art2" parent="Arts/Parede 4" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 4, 0 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -2.0
+autoplay = true
