@@ -21,3 +21,6 @@ func _input(event):
 
 func _on_TriangleRoom_ready():
 	triangle_ready = true
+
+func _on_square_ready():
+	triangle_ready = true

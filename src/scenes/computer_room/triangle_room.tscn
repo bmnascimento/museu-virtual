@@ -10,8 +10,9 @@ room = "res://scenes/computer_room.tscn"
 [node name="triangle" parent="." instance=ExtResource( 1 )]
 
 [node name="Camera2" type="Camera" parent="triangle"]
-transform = Transform( 0.701558, -0.414366, 0.579756, 0, 0.813564, 0.581475, -0.712612, -0.407939, 0.570763, 10.451, 10, 10.838 )
+transform = Transform( 0.706516, -0.407478, 0.578616, 0, 0.817604, 0.575781, -0.707697, -0.406798, 0.577651, 10.451, 10, 10.838 )
 projection = 1
-size = 5.0
+size = 3.21
+near = 0.01
 
 [connection signal="ready" from="." to="." method="_on_TriangleRoom_ready"]
