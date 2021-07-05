@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://nodes/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://nodes/portal.tscn" type="PackedScene" id=2]
@@ -11,15 +11,36 @@
 [ext_resource path="res://scenes/art_room/arts/art6/art6.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/art_room/arts/art7/art7.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/art_room/arts/art8/art8.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/art_room/textures/floor1/floor1_normal.png" type="Texture" id=12]
+[ext_resource path="res://scenes/art_room/textures/floor1/floor1_baseColor.png" type="Texture" id=13]
+[ext_resource path="res://scenes/art_room/textures/floor1/floor1_ambientOcclusion.png" type="Texture" id=14]
+[ext_resource path="res://scenes/art_room/textures/floor1/floor1_roughness.png" type="Texture" id=15]
+[ext_resource path="res://scenes/art_room/textures/floor1/floor1_metallic.png" type="Texture" id=16]
 
 [sub_resource type="Environment" id=1]
 background_color = Color( 1, 1, 1, 1 )
 ambient_light_energy = 0.0
 ambient_light_sky_contribution = 0.0
 
-[sub_resource type="SpatialMaterial" id=2]
+[sub_resource type="PlaneMesh" id=2]
+size = Vector2( 40, 30 )
 
-[sub_resource type="GIProbeData" id=3]
+[sub_resource type="SpatialMaterial" id=3]
+albedo_texture = ExtResource( 13 )
+metallic_texture = ExtResource( 16 )
+roughness_texture = ExtResource( 15 )
+normal_enabled = true
+normal_scale = -2.0
+normal_texture = ExtResource( 12 )
+ao_enabled = true
+ao_light_affect = 0.0
+ao_texture = ExtResource( 14 )
+ao_on_uv2 = false
+ao_texture_channel = 0
+uv1_scale = Vector3( 0.1, 0.1, 0.1 )
+uv1_triplanar = true
+
+[sub_resource type="GIProbeData" id=4]
 bounds = AABB( -15, -10, -14, 30, 20, 28 )
 cell_size = 0.234375
 to_cell_xform = Transform( 4.26667, 0, 0, 0, 4.26667, 0, 0, 0, 4.26667, 64, 42.6667, 59.7333 )
@@ -86,7 +107,11 @@ use_collision = true
 width = 6.0
 height = 8.0
 depth = 28.0
-material = SubResource( 2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.001, 0 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
 
 [node name="Room" type="CSGBox" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
@@ -108,7 +133,7 @@ room = "res://scenes/entrance.tscn"
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.509256, 3.255, -0.0839996 )
 visible = false
 extents = Vector3( 20, 10, 20 )
-data = SubResource( 3 )
+data = SubResource( 4 )
 
 [node name="Node" type="Node" parent="."]
 
@@ -138,19 +163,19 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 3, 0 )
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3, 0, 9.53674e-07 )
 
 [node name="art1" parent="Arts/Parede 3" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 4, -2.38419e-07 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 3, 0 )
 
 [node name="art2" parent="Arts/Parede 3" instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 4, -7.15256e-07 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 3, 0 )
 
 [node name="Parede 4" type="Spatial" parent="Arts"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -15, 0, -1.31134e-07 )
 
 [node name="art1" parent="Arts/Parede 4" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 4, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 3, 0 )
 
 [node name="art2" parent="Arts/Parede 4" instance=ExtResource( 11 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 4, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 3, 0 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )

@@ -1,11 +1,27 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/art_room/arts/art1/art1.gd" type="Script" id=1]
 [ext_resource path="res://scenes/art_room/arts/art3/Le_28_Juillet._La_Liberté_guidant_le_peuple.jpg" type="Texture" id=2]
 [ext_resource path="res://scenes/art_room/arts/art1/CSGBox.gd" type="Script" id=3]
 [ext_resource path="res://scenes/art_room/arts/art1/WindowDialog.gd" type="Script" id=4]
+[ext_resource path="res://scenes/art_room/textures/Wood_011_SD/Wood_011_ambientOcclusion.jpg" type="Texture" id=5]
+[ext_resource path="res://scenes/art_room/textures/Wood_011_SD/Wood_011_basecolor.jpg" type="Texture" id=6]
+[ext_resource path="res://scenes/art_room/textures/Wood_011_SD/Wood_011_roughness.jpg" type="Texture" id=7]
+[ext_resource path="res://scenes/art_room/textures/Wood_011_SD/Wood_011_normal.jpg" type="Texture" id=8]
 
-[sub_resource type="BoxShape" id=1]
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 6 )
+roughness_texture = ExtResource( 7 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 8 )
+ao_enabled = true
+ao_light_affect = 0.0
+ao_texture = ExtResource( 5 )
+ao_on_uv2 = false
+ao_texture_channel = 0
+
+[sub_resource type="BoxShape" id=2]
 extents = Vector3( 3, 6, 1 )
 
 [node name="art1" type="Area"]
@@ -16,6 +32,7 @@ use_collision = true
 width = 6.8
 height = 5.5
 depth = 1.0
+material = SubResource( 1 )
 script = ExtResource( 3 )
 
 [node name="SpotLight" type="SpotLight" parent="."]
@@ -30,7 +47,7 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 1 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="WindowDialog" type="WindowDialog" parent="."]
 visible = true
@@ -65,12 +82,21 @@ margin_left = 455.498
 margin_top = -963.582
 margin_right = 1136.5
 margin_bottom = -734.582
-text = "adasdasdas"
+text = "A liberdade guiando o povo - Eugène Delacroix
+
+Pintura elaborada 1830 com a técnica de óleo sobre tela. Apresenta as medidas de 260 x 325 cm e encontra-se atualmente no Museu do Louvre, Palácio Grão-ducal, na França.
+
+O quadro é uma pintura de Eugène Delacroix em comemoração à Revolução de Julho de 1830, com a queda de Carlos X. Uma mulher representando a Liberdade, guia o povo por cima dos corpos dos derrotados, empunhando a bandeira tricolor da Revolução francesa em uma mão e brandindo um mosquete com baioneta na outra. A obra em questão coloca em cena os principais símbolos de poder da República Francesa.
+
+No momento em que Delacroix pintou o quadro, ele já era o líder reconhecido da escola romântica de pintura francesa. Nascido durante a Era do Iluminismo, deixou-se levar pelas ideias e pelo estilo do romantismo, rejeitando a ênfase no desenho preciso que caracterizava a arte acadêmica de seu tempo, e valorizou a cor livre.
+
+
+Para saber mais: https://www.wikiart.org/pt/eugene-delacroix/a-liberdade-guiando-o-povo-1830"
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[connection signal="body_entered" from="." to="." method="_on_art1_body_entered"]
 [connection signal="body_entered" from="." to="WindowDialog" method="_on_art1_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_art1_body_entered"]
 [connection signal="draw" from="WindowDialog/Panel/RichTextLabel" to="." method="_on_RichTextLabel_draw"]
 [connection signal="ready" from="WindowDialog/Panel/RichTextLabel" to="." method="_on_RichTextLabel_ready"]

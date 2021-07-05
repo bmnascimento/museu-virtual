@@ -1,11 +1,27 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/art_room/arts/art1/art1.gd" type="Script" id=1]
 [ext_resource path="res://scenes/art_room/arts/art4/The_Last_Supper.jpg" type="Texture" id=2]
 [ext_resource path="res://scenes/art_room/arts/art1/CSGBox.gd" type="Script" id=3]
 [ext_resource path="res://scenes/art_room/arts/art1/WindowDialog.gd" type="Script" id=4]
+[ext_resource path="res://scenes/art_room/textures/Wood_011_SD/Wood_011_ambientOcclusion.jpg" type="Texture" id=5]
+[ext_resource path="res://scenes/art_room/textures/Wood_011_SD/Wood_011_basecolor.jpg" type="Texture" id=6]
+[ext_resource path="res://scenes/art_room/textures/Wood_011_SD/Wood_011_roughness.jpg" type="Texture" id=7]
+[ext_resource path="res://scenes/art_room/textures/Wood_011_SD/Wood_011_normal.jpg" type="Texture" id=8]
 
-[sub_resource type="BoxShape" id=1]
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 6 )
+roughness_texture = ExtResource( 7 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 8 )
+ao_enabled = true
+ao_light_affect = 0.0
+ao_texture = ExtResource( 5 )
+ao_on_uv2 = false
+ao_texture_channel = 0
+
+[sub_resource type="BoxShape" id=2]
 extents = Vector3( 5, 6, 1 )
 
 [node name="art4" type="Area"]
@@ -16,6 +32,7 @@ use_collision = true
 width = 10.0
 height = 5.3
 depth = 1.0
+material = SubResource( 1 )
 script = ExtResource( 3 )
 
 [node name="SpotLight" type="SpotLight" parent="."]
@@ -29,7 +46,7 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 1 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="WindowDialog" type="WindowDialog" parent="."]
 visible = true
@@ -64,12 +81,22 @@ margin_left = 455.498
 margin_top = -963.582
 margin_right = 1136.5
 margin_bottom = -734.582
-text = "adasdasdas"
+text = "A Última Ceia - Leonardo da Vinci
+
+Pintura elaborada entre 1495 e 1498 com a técnica de têmpera e óleo sobre duas camadas de gesso aplicadas em estuque. Apresenta as medidas de 460 x 880 cm e encontra-se atualmente na Igreja e Convento Santa Maria Delle Grazie, em Milão, Itália.
+
+A obra foi encomendado pelo Duque de Milão, Ludovico Sforza, para adornar a parede da Igreja de Santa Maria Delle Grazie. Nesta, é retratado a última ceia de Jesus Cristo ao lado de seus apóstolos, momentos antes dele ser crucificado. Por utilizar novas técnicas em afresco e a têmpera, como aplicação de tinta numa superfície seca invés da tradicional parede umedecida, a escolha dessa nova técnica resultou numa deterioração mais acelerada da obra. Os eventos relacionados a Segunda Guerra Mundial também contribuiram para o desgate acelerado, sendo necessária diversas restaurações na obra ao longo da história.
+
+Parte do movimento  Renascimento, o quadro é importante por retratar um importante momento bíblico, além de utilizar novas técnicas avançadas de pintura.
+
+
+
+Para saber mais: https://www.todamateria.com.br/a-ultima-ceia-de-leonardo-da-vinci/"
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[connection signal="body_entered" from="." to="." method="_on_art1_body_entered"]
 [connection signal="body_entered" from="." to="WindowDialog" method="_on_art1_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_art1_body_entered"]
 [connection signal="draw" from="WindowDialog/Panel/RichTextLabel" to="." method="_on_RichTextLabel_draw"]
 [connection signal="ready" from="WindowDialog/Panel/RichTextLabel" to="." method="_on_RichTextLabel_ready"]
