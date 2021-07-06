@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://nodes/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://nodes/portal.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://scenes/computer_room/images/hand_reflection.jpg" type="Texture" id=7]
 [ext_resource path="res://scenes/computer_room/images/Julia_set.png" type="Texture" id=8]
 [ext_resource path="res://scenes/computer_room/models/penrose.glb" type="PackedScene" id=9]
+[ext_resource path="res://scripts/popup.gd" type="Script" id=10]
 
 [sub_resource type="Environment" id=1]
 background_color = Color( 1, 1, 1, 1 )
@@ -17,6 +18,9 @@ ambient_light_sky_contribution = 0.0
 
 [sub_resource type="SpatialMaterial" id=2]
 albedo_color = Color( 0.796078, 0.443137, 0.105882, 1 )
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 2.05338, 0.832186, 2.72241 )
 
 [sub_resource type="GIProbeData" id=3]
 bounds = AABB( -15.2772, -4.99992, -15.2409, 30.5544, 9.99984, 30.4818 )
@@ -81,6 +85,38 @@ transform = Transform( 1.31134e-08, -1.14641e-15, 0.5, -2.62268e-08, -0.3, 0, 0.
 texture = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 2, 0 )
 
+[node name="mandelbrotArea" type="Spatial" parent="Quadros/Quadro"]
+transform = Transform( 1.78015, -5.29195e-06, -4.9384e-08, 8.09319e-07, 11.64, 8.51805e-08, 5.96046e-08, -6.72249e-07, 1.4749, 29.4645, -0.496568, -7.7431 )
+
+[node name="PopupDialog" type="PopupDialog" parent="Quadros/Quadro/mandelbrotArea"]
+margin_left = 63.0
+margin_top = 336.0
+margin_right = 946.0
+margin_bottom = 563.0
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Quadros/Quadro/mandelbrotArea/PopupDialog"]
+margin_left = 23.0
+margin_top = 18.0
+margin_right = 868.0
+margin_bottom = 205.0
+text = "O conjunto de Mandelbrot é criado por iterações sucessivas de valores no plano complexo.
+
+Curiosamente, padrões derivados desse processo são usados desde computação gráfico até a mecânica dos fluidos, dentre muitos outros campos."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PopupArea" type="Area" parent="Quadros/Quadro/mandelbrotArea"]
+transform = Transform( 1.54159, 2.49594e-07, -2.98023e-08, 2.56114e-09, 1.8101, 2.5332e-07, 2.98023e-08, -1.19209e-07, 2.02798, -20.9157, 1.3113e-06, 8.1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Quadros/Quadro/mandelbrotArea/PopupArea"]
+transform = Transform( 0.638868, 4.61005e-07, -1.86265e-08, 9.8953e-10, 0.570159, 5.96046e-08, 3.35276e-08, -7.45058e-08, 0.634399, 2.3, -5.36442e-07, -1.52969 )
+shape = SubResource( 4 )
+
 [node name="Quadro3" type="CSGBox" parent="Quadros"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.73, 3.311, -10 )
 use_collision = true
@@ -97,6 +133,42 @@ texture = ExtResource( 6 )
 [node name="stairs" parent="Quadros/Quadro3" instance=ExtResource( 2 )]
 transform = Transform( -8.55421e-08, 0, -1, 0, 0.944834, 0, 1.95698, 0, -4.37114e-08, 0.0926342, -2.441, 0 )
 room = "res://scenes/computer_room/stair_room.tscn"
+
+[node name="stairsArea" type="Spatial" parent="Quadros/Quadro3"]
+transform = Transform( 1.78015, -5.29195e-06, -2.50729e-08, 8.09319e-07, 11.64, 4.32471e-08, 5.96047e-08, -6.72249e-07, 0.748824, 29.9165, -0.496568, -3.26849 )
+
+[node name="PopupDialog" type="PopupDialog" parent="Quadros/Quadro3/stairsArea"]
+margin_left = 63.0
+margin_top = 336.0
+margin_right = 946.0
+margin_bottom = 563.0
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Quadros/Quadro3/stairsArea/PopupDialog"]
+margin_left = 23.0
+margin_top = 18.0
+margin_right = 868.0
+margin_bottom = 205.0
+text = "Para cima e para baixo - M. C. Escher (1960)
+
+A imagem foi concebida pelo artista holandês famoso por reproduzir ilusões de ótica em suas obras.
+
+Aqui, vemos uma escada sendo percorrida por soldados. Seus degraus contínuos seriam impossíveis de se reproduzir na vida real sem alguns truques de perspectiva.
+
+Adentrando a imagem, você pode observar uma escultura que tenta reproduzir o efeito visual da pintura."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PopupArea" type="Area" parent="Quadros/Quadro3/stairsArea"]
+transform = Transform( 1.54159, 2.49594e-07, -2.98023e-08, 2.56114e-09, 1.8101, 2.5332e-07, 2.98023e-08, -1.19209e-07, 2.02798, -20.9157, 1.3113e-06, 8.1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Quadros/Quadro3/stairsArea/PopupArea"]
+transform = Transform( 0.638868, 4.61005e-07, -1.86265e-08, 9.8953e-10, 0.570159, 5.96046e-08, 3.35276e-08, -7.45058e-08, 0.634399, 2.3, -5.36442e-07, -1.52969 )
+shape = SubResource( 4 )
 
 [node name="Quadro4" type="CSGBox" parent="Quadros"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.56, 3.311, -10 )
@@ -115,6 +187,42 @@ texture = ExtResource( 7 )
 transform = Transform( -5.69681e-08, 0, -1, 0, 0.944834, 0, 1.30328, 0, -4.37114e-08, 0.0926342, -2.441, 0 )
 room = "res://scenes/computer_room/square_room.tscn"
 
+[node name="squareArea" type="Spatial" parent="Quadros/Quadro4"]
+transform = Transform( 1.78015, -5.29195e-06, -2.40162e-08, 8.09319e-07, 11.64, 4.14245e-08, 5.96047e-08, -6.72249e-07, 0.717266, 29.9165, -0.496568, -3.54536 )
+
+[node name="PopupDialog" type="PopupDialog" parent="Quadros/Quadro4/squareArea"]
+margin_left = 63.0
+margin_top = 336.0
+margin_right = 946.0
+margin_bottom = 563.0
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Quadros/Quadro4/squareArea/PopupDialog"]
+margin_left = 23.0
+margin_top = 18.0
+margin_right = 868.0
+margin_bottom = 205.0
+text = "Mão com Esfera Refletora - M. C. Escher (1935)
+
+A imagem foi concebida pelo artista holandês famoso por reproduzir ilusões de ótica em suas obras.
+
+A obra retrata uma mão segurando uma esfera reflexiva. Na reflexão, a maior parte do espaço em torno do modelo, o próprio Escher, pode ser visto. Autorretratos em superfícies reflexivas e esféricas são comuns na obra de Escher, e essa imagem é o exemplo mais famoso. Na maioria de seus autorretratos deste tipo, Escher aparece no ato de desenhar a esfera. Nesta imagem ele está sentado e olhando para seu reflexo. A cabeça do artista, ou mais exatamente o ponto entre os olhos, está no centro absoluto. Não importa se você se vira, você sempre o verá como o ponto central da imagem.
+
+Adentrando a imagem, você pode observar uma escultura que tenta reproduzir um efeito que seria impossível na vida real.."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PopupArea" type="Area" parent="Quadros/Quadro4/squareArea"]
+transform = Transform( 1.54159, 2.49594e-07, -2.98023e-08, 2.56114e-09, 1.8101, 2.5332e-07, 2.98023e-08, -1.19209e-07, 2.02798, -20.9157, 1.3113e-06, 8.1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Quadros/Quadro4/squareArea/PopupArea"]
+transform = Transform( 0.638868, 4.61005e-07, -1.86265e-08, 9.8953e-10, 0.570159, 5.96046e-08, 3.35276e-08, -7.45058e-08, 0.634399, 2.3, -5.36442e-07, -1.52969 )
+shape = SubResource( 4 )
+
 [node name="Quadro2" type="CSGBox" parent="Quadros"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 3.311, -10 )
 width = 0.8
@@ -131,6 +239,42 @@ texture = ExtResource( 5 )
 transform = Transform( -8.55421e-08, 0, -1, 0, 0.944834, 0, 1.95698, 0, -4.37114e-08, 0.123, -2.441, 8.52651e-14 )
 room = "res://scenes/computer_room/triangle_room.tscn"
 
+[node name="triangleArea" type="Spatial" parent="Quadros/Quadro2"]
+transform = Transform( 1.78015, -5.29195e-06, -2.21144e-08, 8.09319e-07, 11.64, 3.81442e-08, 5.96047e-08, -6.72249e-07, 0.660468, 29.9165, -0.496568, -3.35342 )
+
+[node name="PopupDialog" type="PopupDialog" parent="Quadros/Quadro2/triangleArea"]
+margin_left = 63.0
+margin_top = 336.0
+margin_right = 946.0
+margin_bottom = 563.0
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Quadros/Quadro2/triangleArea/PopupDialog"]
+margin_left = 23.0
+margin_top = 18.0
+margin_right = 868.0
+margin_bottom = 205.0
+text = "Cachoeira - M. C. Escher (1961)
+
+A imagem foi concebida pelo artista holandês famoso por reproduzir ilusões de ótica em suas obras.
+
+Aqui, vemos uma cachoeira que se retroalimenta, algo impossível de se reproduzir na vida real.
+
+Adentrando a imagem, você pode observar uma escultura que tenta reproduzir o efeito visual da pintura."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PopupArea" type="Area" parent="Quadros/Quadro2/triangleArea"]
+transform = Transform( 1.54159, 2.49594e-07, -2.98023e-08, 2.56114e-09, 1.8101, 2.5332e-07, 2.98023e-08, -1.19209e-07, 2.02798, -20.9157, 1.3113e-06, 8.1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Quadros/Quadro2/triangleArea/PopupArea"]
+transform = Transform( 0.638868, 4.61005e-07, -1.86265e-08, 9.8953e-10, 0.570159, 5.96046e-08, 3.35276e-08, -7.45058e-08, 0.634399, 2.3, -5.36442e-07, -1.52969 )
+shape = SubResource( 4 )
+
 [node name="Quadro5" type="CSGBox" parent="Quadros"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.158, 3.11067, -4.655 )
 use_collision = true
@@ -143,6 +287,38 @@ material = SubResource( 2 )
 transform = Transform( 3.0598e-08, -4.62017e-15, 0.7, -1.05697e-07, -0.7, 0, 0.7, -1.05697e-07, -3.0598e-08, -0.45, 0, 0 )
 texture = ExtResource( 8 )
 
+[node name="juliaArea" type="Spatial" parent="Quadros/Quadro5"]
+transform = Transform( 1.78015, -5.29195e-06, -4.9384e-08, 8.09319e-07, 11.64, 8.51805e-08, 5.96046e-08, -6.72249e-07, 1.4749, 29.2374, -0.496568, -7.74311 )
+
+[node name="PopupDialog" type="PopupDialog" parent="Quadros/Quadro5/juliaArea"]
+margin_left = 63.0
+margin_top = 336.0
+margin_right = 946.0
+margin_bottom = 563.0
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Quadros/Quadro5/juliaArea/PopupDialog"]
+margin_left = 23.0
+margin_top = 18.0
+margin_right = 868.0
+margin_bottom = 205.0
+text = "O conjunto de Julia deriva do de Mandelbrot, mas com uma configuração bem caótica.
+
+Embora parecidos, os conjuntos de Julia representam o fato de que pequenas perturbações em seu método de iteração levam a uma grande variação na composição final."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PopupArea" type="Area" parent="Quadros/Quadro5/juliaArea"]
+transform = Transform( 1.54159, 2.49594e-07, -2.98023e-08, 2.56114e-09, 1.8101, 2.5332e-07, 2.98023e-08, -1.19209e-07, 2.02798, -20.9157, 1.3113e-06, 8.1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Quadros/Quadro5/juliaArea/PopupArea"]
+transform = Transform( 0.638868, 4.61005e-07, -1.86265e-08, 9.8953e-10, 0.570159, 5.96046e-08, 3.35276e-08, -7.45058e-08, 0.634399, 2.3, -5.36442e-07, -1.52969 )
+shape = SubResource( 4 )
+
 [node name="GIProbe" type="GIProbe" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0682774, 3.56675, 0 )
 extents = Vector3( 15.2772, 4.99992, 15.2409 )
@@ -151,7 +327,75 @@ data = SubResource( 3 )
 [node name="Esculturas" type="Node2D" parent="."]
 
 [node name="mobius" parent="Esculturas" instance=ExtResource( 4 )]
-transform = Transform( 0.439194, 0.40852, -0.0148445, -0.404873, 0.437708, 0.0670087, 0.0564532, -0.0390328, 0.596062, -14.2747, -0.843689, 0.0748484 )
+transform = Transform( 0.439194, 0.40852, -0.0148445, -0.404873, 0.437708, 0.0670087, 0.0564532, -0.0390328, 0.596062, -14.9329, -0.508864, -3.05884 )
+
+[node name="MobiusArea" type="Spatial" parent="Esculturas/mobius"]
+transform = Transform( 1.78015, -2.95043e-06, -7.45058e-08, 8.09319e-07, 6.19233, 2.23517e-08, 5.96046e-08, -3.57628e-07, 1.3497, 31.7138, 6.07774, -9.00982 )
+
+[node name="PopupDialog" type="PopupDialog" parent="Esculturas/mobius/MobiusArea"]
+margin_left = 63.0
+margin_top = 336.0
+margin_right = 946.0
+margin_bottom = 563.0
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Esculturas/mobius/MobiusArea/PopupDialog"]
+margin_left = 23.0
+margin_top = 18.0
+margin_right = 868.0
+margin_bottom = 205.0
+text = "A fita de Mobius é uma estrutura que pode ser totalmente percorrida por um objeto em sua superfície, sem passar pelas arestas."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PopupArea" type="Area" parent="Esculturas/mobius/MobiusArea"]
+transform = Transform( 1.54159, 2.49594e-07, -2.98023e-08, 2.56114e-09, 1.8101, 2.5332e-07, 2.98023e-08, -1.19209e-07, 2.02798, -20.9157, 1.3113e-06, 8.1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Esculturas/mobius/MobiusArea/PopupArea"]
+transform = Transform( 0.638868, 4.61005e-07, -1.86265e-08, 9.8953e-10, 0.570159, 5.96046e-08, 3.35276e-08, -7.45058e-08, 0.634399, 2.3, -5.36442e-07, -1.52969 )
+shape = SubResource( 4 )
 
 [node name="penrose" parent="Esculturas" instance=ExtResource( 9 )]
-transform = Transform( -0.0071144, 0.0990036, 0.0121522, -0.00292789, 0.0119706, -0.0992377, -0.0997036, -0.00741598, 0.00204708, -12.4873, 2.10987, 5.16255 )
+transform = Transform( -0.0071144, 0.0990036, 0.0121522, -0.00292789, 0.0119706, -0.0992377, -0.0997036, -0.00741598, 0.00204708, -12.6183, 2.05594, 3.32615 )
+
+[node name="PenroseArea" type="Spatial" parent="Esculturas/penrose"]
+transform = Transform( 2.05237, -2.83122e-06, -4.09782e-08, 9.23872e-07, 6.19233, 7.07805e-08, 7.45058e-08, -4.56348e-07, 1.3497, 28.8906, 6.07774, -9.00983 )
+
+[node name="PopupDialog" type="PopupDialog" parent="Esculturas/penrose/PenroseArea"]
+margin_left = 63.0
+margin_top = 336.0
+margin_right = 946.0
+margin_bottom = 563.0
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Esculturas/penrose/PenroseArea/PopupDialog"]
+margin_left = 23.0
+margin_top = 18.0
+margin_right = 868.0
+margin_bottom = 205.0
+text = "O triângulo de Penrose é uma figura que causa uma ilusão ao observador, por aparentar ser um triângulo torcido se visto de frente, mas com forma diferente se visto de lado"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PopupArea" type="Area" parent="Esculturas/penrose/PenroseArea"]
+transform = Transform( 9.04147, 4.76837e-07, -1.47521e-06, -1.49012e-08, -13.4959, 7.67177e-06, 1.37091e-06, 1.18539e-05, 9.93188, -32.6894, 1.33514e-05, 8.09999 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Esculturas/penrose/PenroseArea/PopupArea"]
+transform = Transform( 0.638868, 4.61005e-07, -1.86265e-08, 9.8953e-10, 0.570159, 5.96046e-08, 3.35276e-08, -7.45058e-08, 0.634399, 2.3, -5.36442e-07, -1.52969 )
+shape = SubResource( 4 )
+
+[connection signal="body_entered" from="Quadros/Quadro/mandelbrotArea/PopupArea" to="Quadros/Quadro/mandelbrotArea/PopupDialog" method="_on_PopupArea_body_entered"]
+[connection signal="body_entered" from="Quadros/Quadro3/stairsArea/PopupArea" to="Quadros/Quadro3/stairsArea/PopupDialog" method="_on_PopupArea_body_entered"]
+[connection signal="body_entered" from="Quadros/Quadro4/squareArea/PopupArea" to="Quadros/Quadro4/squareArea/PopupDialog" method="_on_PopupArea_body_entered"]
+[connection signal="body_entered" from="Quadros/Quadro2/triangleArea/PopupArea" to="Quadros/Quadro2/triangleArea/PopupDialog" method="_on_PopupArea_body_entered"]
+[connection signal="body_entered" from="Quadros/Quadro5/juliaArea/PopupArea" to="Quadros/Quadro5/juliaArea/PopupDialog" method="_on_PopupArea_body_entered"]
+[connection signal="body_entered" from="Esculturas/mobius/MobiusArea/PopupArea" to="Esculturas/mobius/MobiusArea/PopupDialog" method="_on_PopupArea_body_entered"]
+[connection signal="body_entered" from="Esculturas/penrose/PenroseArea/PopupArea" to="Esculturas/penrose/PenroseArea/PopupDialog" method="_on_PopupArea_body_entered"]
