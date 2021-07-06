@@ -75,14 +75,25 @@ __meta__ = {
 
 [node name="RichTextLabel" type="RichTextLabel" parent="WindowDialog/Panel"]
 anchor_left = -0.445693
-anchor_top = 4.20778
+anchor_top = 4.21328
 anchor_right = -0.109435
-anchor_bottom = 4.20778
+anchor_bottom = 4.21328
 margin_left = 455.498
 margin_top = -963.582
 margin_right = 1136.5
 margin_bottom = -734.582
-text = "adasdasdas"
+text = "Double Mona Lisa (Peanut butter and jelly) - Vik Muniz
+
+Pintura elaborada 1999  com geleia de uva e a manteiga de amendoim. Apresenta as medidas de 119.5 x 155 cm e encontra-se atualmente no Sarasota Art Museum, nos EUA.
+
+Nesse trabalho, Vik Muniz recriou a obra clássica de Leonardo da Vinci, a Monalisa. Mas ao dar forma a misteriosa moça escolheu dois elementos particulares e bastante cotidianos: a geleia de uva e a manteiga de amendoim. Apenas com essas duas matérias-primas e um fundo branco liso, o artista foi capaz de dar corpo a pintura. 
+
+O uso de materiais inesperados e efêmeros para a composição das peças é justificado pelo próprio artista:
+
+\"A arte é sobretudo a habilidade de olhar para uma coisa e enxergar outra.\"
+
+
+Para saber mais: https://www.culturagenial.com/vik-muniz-obras/"
 __meta__ = {
 "_edit_use_anchors_": true
 }

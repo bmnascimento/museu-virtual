@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/art_room/arts/art1/art1.gd" type="Script" id=1]
-[ext_resource path="res://scenes/art_room/arts/art8/mulata-e-p-ssaros-1967.jpg" type="Texture" id=2]
+[ext_resource path="res://scenes/art_room/arts/art8/Samba-Di-Cavalcanti.jpg" type="Texture" id=2]
 [ext_resource path="res://scenes/art_room/arts/art1/CSGBox.gd" type="Script" id=3]
 [ext_resource path="res://scenes/art_room/arts/art1/WindowDialog.gd" type="Script" id=4]
 [ext_resource path="res://scenes/art_room/textures/Wood_011_SD/Wood_011_ambientOcclusion.jpg" type="Texture" id=5]
@@ -30,7 +30,7 @@ script = ExtResource( 1 )
 [node name="CSGBox" type="CSGBox" parent="."]
 use_collision = true
 width = 4.0
-height = 5.3
+height = 4.5
 depth = 1.0
 material = SubResource( 1 )
 script = ExtResource( 3 )
@@ -42,7 +42,7 @@ spot_range = 11.0
 spot_angle = 34.6304
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform( 0.85, 0, 0, 0, 0.85, 0, 0, 0, 1, 0, 0, 0.51 )
+transform = Transform( 0.45, 0, 0, 0, 0.45, 0, 0, 0, 1, 0, 0, 0.51 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
@@ -82,7 +82,18 @@ margin_left = 455.498
 margin_top = -963.582
 margin_right = 1136.5
 margin_bottom = -734.582
-text = "adasdasdas"
+text = "Samba - Di Cavalcanti
+
+Pintura elaborada 1925 com a técnica de óleo sobre tela. Apresenta as medidas de 177 x 154 cm e foi destruído por um incêndio no apartamento de Jean Boghici em 13 de agosto de 2012.
+
+O quadro é uma pintura de Di Cavalcanti, onde o artista tenta representa a cultura brasileira e a realidade do povo brasileiro, explorando o samba, a beleza e sensualidade da mulher em atividades do cotidiano e a boemia das noites cariocas. Samba, que é uma das mais famosas do autor,  apresenta um excesso de cores e o uso de formas cilíndricas para retratar os corpos das pessoas.
+
+A obra em questão faz parte do movimento modernista.
+
+
+
+
+Para saber mais: https://blog.grafittiartes.com.br/quais-as-pinturas-brasileiras-mais-famosas/"
 __meta__ = {
 "_edit_use_anchors_": true
 }

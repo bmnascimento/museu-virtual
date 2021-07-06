@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/Mona_Lisa.jpg-b97eff40417193e4c2743627bb89bf4a.s3tc.stex"
-path.etc2="res://.import/Mona_Lisa.jpg-b97eff40417193e4c2743627bb89bf4a.etc2.stex"
+path.s3tc="res://.import/Samba-Di-Cavalcanti.jpg-c70356aa9f8abac2d375f9103abcdf67.s3tc.stex"
+path.etc2="res://.import/Samba-Di-Cavalcanti.jpg-c70356aa9f8abac2d375f9103abcdf67.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://scenes/art_room/arts/art8/Mona_Lisa.jpg"
-dest_files=[ "res://.import/Mona_Lisa.jpg-b97eff40417193e4c2743627bb89bf4a.s3tc.stex", "res://.import/Mona_Lisa.jpg-b97eff40417193e4c2743627bb89bf4a.etc2.stex" ]
+source_file="res://scenes/art_room/arts/art8/Samba-Di-Cavalcanti.jpg"
+dest_files=[ "res://.import/Samba-Di-Cavalcanti.jpg-c70356aa9f8abac2d375f9103abcdf67.s3tc.stex", "res://.import/Samba-Di-Cavalcanti.jpg-c70356aa9f8abac2d375f9103abcdf67.etc2.stex" ]
 
 [params]
 
