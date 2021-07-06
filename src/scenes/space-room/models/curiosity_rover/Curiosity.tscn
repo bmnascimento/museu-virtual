@@ -1,0 +1,134 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/space-room/models/curiosity_rover/scene.gltf" type="PackedScene" id=1]
+
+[node name="scene" instance=ExtResource( 1 )]
+
+[node name="_root_p" parent="RootNode (gltf orientation matrix)/RootNode (model correction matrix)/Root" index="0"]
+transform = Transform( 1, 2.04512e-06, 0, -2.04512e-06, 1, 0, 0, 0, 1, 0, -0.143562, 0 )
+
+[node name="Chassis" parent="RootNode (gltf orientation matrix)/RootNode (model correction matrix)/Root/_root_p" index="0"]
+transform = Transform( 1, 3.37757e-05, -7.63394e-07, -3.37757e-05, 1, 9.27799e-08, 7.63397e-07, -9.27542e-08, 1, 0, -0.055, 0.886401 )
+
+[node name="cover_02" parent="RootNode (gltf orientation matrix)/RootNode (model correction matrix)/Root/_root_p/Chassis" index="19"]
+transform = Transform( 0, 0, -1, 0, 1, 0, 1, 0, 0, -0.27699, -0.68857, 0.22923 )
+
+[node name="cover_03" parent="RootNode (gltf orientation matrix)/RootNode (model correction matrix)/Root/_root_p/Chassis" index="20"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, -0.1546, -0.5164, 0.22915 )
+
+[node name="cover_01" parent="RootNode (gltf orientation matrix)/RootNode (model correction matrix)/Root/_root_p/Chassis" index="21"]
+transform = Transform( 0, 0, 1, 0, 1, 0, -1, 0, 0, 0.21259, -0.5633, 0.22745 )
+
+[node name="body" parent="RootNode (gltf orientation matrix)/RootNode (model correction matrix)/Root/_root_p" index="1"]
+transform = Transform( 1, 3.37757e-05, -7.63394e-07, -3.37757e-05, 1, 9.27799e-08, 7.63397e-07, -9.27542e-08, 1, 0, -0.055, 0.886401 )
+
+[node name="arm_01001" parent="RootNode (gltf orientation matrix)/RootNode (model correction matrix)/Root/_root_p/body" index="6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4515, -1.05785, 0.11165 )
+
+[node name="arm_02001" parent="RootNode (gltf orientation matrix)/RootNode (model correction matrix)/Root/_root_p/body/arm_01001" index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00384, -0.1605, -0.16565 )
+
+[node name="arm_03001" parent="RootNode (gltf orientation matrix)/RootNode (model correction matrix)/Root/_root_p/body/arm_01001/arm_02001" index="4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0705, -0.82478, 0.00058 )
+
+[node name="arm_04001" parent="RootNode (gltf orientation matrix)/RootNode (model correction matrix)/Root/_root_p/body/arm_01001/arm_02001/arm_03001" index="4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15926, 0.00127, 0.78267 )
+
+[node name="arm_05_head001" parent="RootNode (gltf orientation matrix)/RootNode (model correction matrix)/Root/_root_p/body/arm_01001/arm_02001/arm_03001/arm_04001" index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0743, 0.10127, 0.14398 )
+
+[node name="MAHLI_lens_cover_p" parent="RootNode (gltf orientation matrix)/RootNode (model correction matrix)/Root/_root_p/body/arm_01001/arm_02001/arm_03001/arm_04001/arm_05_head001/MAHLI" index="5"]
+transform = Transform( 0.285282, -0.464912, 0.838136, 0.410027, -0.731213, -0.545166, 0.86631, 0.499184, -0.0179756, -0.03387, 0.04198, 0.02691 )
+
+[node name="antenna_HG_01" parent="RootNode (gltf orientation matrix)/RootNode (model correction matrix)/Root/_root_p/body" index="9"]
+transform = Transform( 0.90631, -0.422614, 0, 0.422614, 0.90631, 0, 0, 0, 1, 0.47497, 0.51452, 0.34432 )
+
+[node name="antenna_HG_02_p" parent="RootNode (gltf orientation matrix)/RootNode (model correction matrix)/Root/_root_p/body/antenna_HG_01" index="1"]
+transform = Transform( 0.640863, 0.422636, 0.640838, -0.298893, 0.9063, -0.298805, -0.707076, -4.89354e-05, 0.707137, 0.03643, 0.07836, 0.13318 )
+
+[node name="lens_covers_front" parent="RootNode (gltf orientation matrix)/RootNode (model correction matrix)/Root/_root_p/body" index="10"]
+transform = Transform( 1, 0, 0, 0, 0.713883, 0.700265, 0, -0.700265, 0.713883, -0.09066, -0.85101, -0.19755 )
+
+[node name="lens_covers_rear" parent="RootNode (gltf orientation matrix)/RootNode (model correction matrix)/Root/_root_p/body" index="11"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.501, 1.09256, -0.13837 )
+
+[node name="mast_p" parent="RootNode (gltf orientation matrix)/RootNode (model correction matrix)/Root/_root_p/body" index="12"]
+transform = Transform( 0.83869, -0.544609, 0, 0.544609, 0.83869, 0, 0, 0, 1, -0.55821, -0.66051, 0.339 )
+
+[node name="mast_02001" parent="RootNode (gltf orientation matrix)/RootNode (model correction matrix)/Root/_root_p/body/mast_p/mast_01001" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03789, 0.04288, 0.29131 )
+
+[node name="suspension_xmember" parent="RootNode (gltf orientation matrix)/RootNode (model correction matrix)/Root/_root_p/body" index="13"]
+transform = Transform( 0.999955, -0.00932112, -0.00160092, 0.0093196, 0.999956, -0.000958696, 0.00160979, 0.000943733, 0.999998, 0.00038, 0.197, 0.28807 )
+
+[node name="suspension_axel_L" parent="RootNode (gltf orientation matrix)/RootNode (model correction matrix)/Root/_root_p/body" index="14"]
+transform = Transform( 1, 6.57077e-08, 7.3438e-08, -6.57077e-08, 1, 4.38696e-07, -7.3438e-08, -4.38696e-07, 1, 0.641, -0.159, -0.011 )
+
+[node name="suspension_rod_L" parent="RootNode (gltf orientation matrix)/RootNode (model correction matrix)/Root/_root_p/body/suspension_axel_L" index="1"]
+transform = Transform( -1, -0.000165441, 1.75337e-05, 0.000165255, -0.999949, -0.0101397, 1.92103e-05, -0.0101397, 0.999949, 0.0308, -1e-05, 0.26854 )
+
+[node name="suspension_arm_B_L_p" parent="RootNode (gltf orientation matrix)/RootNode (model correction matrix)/Root/_root_p/body/suspension_axel_L" index="2"]
+transform = Transform( 0.980789, 0, -0.195071, 0, 1, 0, 0.195071, 0, 0.980789, 0.15336, 0, 0.00949 )
+
+[node name="Cube_03_p" parent="RootNode (gltf orientation matrix)/RootNode (model correction matrix)/Root/_root_p/body/suspension_axel_L/suspension_arm_B_L_p/suspension_arm_B_L" index="2"]
+transform = Transform( 1, -4.44494e-08, -5.41123e-08, 4.44493e-08, 1, -3.96179e-07, 5.41123e-08, 3.96179e-07, 1, 0.19787, 0.3897, -0.13783 )
+
+[node name="suspension_arm_B2_L" parent="RootNode (gltf orientation matrix)/RootNode (model correction matrix)/Root/_root_p/body/suspension_axel_L/suspension_arm_B_L_p/suspension_arm_B_L/Cube_03_p" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19228, 0, 0 )
+
+[node name="wheel_02_L" parent="RootNode (gltf orientation matrix)/RootNode (model correction matrix)/Root/_root_p/body/suspension_axel_L/suspension_arm_B_L_p/suspension_arm_B_L/Cube_03_p/suspension_arm_B2_L" index="2"]
+transform = Transform( 1, 0, 0, 0, 1, -9.28949e-06, 0, 9.28949e-06, 1, 0.39392, -0.451, -0.40001 )
+
+[node name="suspension_steer_B_L" parent="RootNode (gltf orientation matrix)/RootNode (model correction matrix)/Root/_root_p/body/suspension_axel_L/suspension_arm_B_L_p/suspension_arm_B_L/Cube_03_p/suspension_arm_B2_L" index="3"]
+transform = Transform( 0.84474, -0.535177, 0, 0.535177, 0.84474, 0, 0, 0, 1, 0.26276, 0.624, -0.0006 )
+
+[node name="wheel_03_L" parent="RootNode (gltf orientation matrix)/RootNode (model correction matrix)/Root/_root_p/body/suspension_axel_L/suspension_arm_B_L_p/suspension_arm_B_L/Cube_03_p/suspension_arm_B2_L/suspension_steer_B_L" index="2"]
+transform = Transform( 1, 0, 0, 0, 1, -9.28949e-06, 0, 9.28949e-06, 1, 0.00049, -0.00124, -0.39949 )
+
+[node name="suspension_arm_F_L_p" parent="RootNode (gltf orientation matrix)/RootNode (model correction matrix)/Root/_root_p/body/suspension_axel_L" index="3"]
+transform = Transform( 0.980788, 0, -0.195077, 0, 1, 0, 0.195077, 0, 0.980788, 0.15391, 0.0025, 0.00676 )
+
+[node name="Cube_01_p" parent="RootNode (gltf orientation matrix)/RootNode (model correction matrix)/Root/_root_p/body/suspension_axel_L/suspension_arm_F_L_p/suspension_arm_F_L" index="2"]
+transform = Transform( 0.844704, 0.535234, 0, -0.535234, 0.844704, 0, 0, 0, 1, 0.2631, -0.881, -0.00217 )
+
+[node name="suspension_steer_F_L" parent="RootNode (gltf orientation matrix)/RootNode (model correction matrix)/Root/_root_p/body/suspension_axel_L/suspension_arm_F_L_p/suspension_arm_F_L/Cube_01_p" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00024, 0, -0.24 )
+
+[node name="wheel_01_L" parent="RootNode (gltf orientation matrix)/RootNode (model correction matrix)/Root/_root_p/body/suspension_axel_L/suspension_arm_F_L_p/suspension_arm_F_L/Cube_01_p/suspension_steer_F_L" index="2"]
+transform = Transform( 1, 0, 0, 0, 1, -9.60907e-06, 0, 9.60907e-06, 1, 0.00039, -9e-05, -0.3996 )
+
+[node name="suspension_axel_R" parent="RootNode (gltf orientation matrix)/RootNode (model correction matrix)/Root/_root_p/body" index="15"]
+transform = Transform( 1, 8.44385e-05, -4.48771e-12, -8.44385e-05, 1, -1.06295e-07, -4.48771e-12, 1.06295e-07, 1, -0.638, -0.159, -0.01104 )
+
+[node name="suspension_rod_R" parent="RootNode (gltf orientation matrix)/RootNode (model correction matrix)/Root/_root_p/body/suspension_axel_R" index="1"]
+transform = Transform( 0.999996, -0.00274783, -0.00113253, 0.00273225, 0.999905, -0.0135418, 0.00116963, 0.0135386, 0.999908, -0.03332, 0.00018, 0.26719 )
+
+[node name="suspension_arm_B_R_p" parent="RootNode (gltf orientation matrix)/RootNode (model correction matrix)/Root/_root_p/body/suspension_axel_R" index="2"]
+transform = Transform( 0.980789, 0, 0.195071, 0, 1, 0, -0.195071, 0, 0.980789, -0.16116, 0, 0.00953 )
+
+[node name="suspension_arm_B2_R" parent="RootNode (gltf orientation matrix)/RootNode (model correction matrix)/Root/_root_p/body/suspension_axel_R/suspension_arm_B_R_p/suspension_arm_B_R/Cube_04_p" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19228, 0, 0 )
+
+[node name="suspension_steer_B_R" parent="RootNode (gltf orientation matrix)/RootNode (model correction matrix)/Root/_root_p/body/suspension_axel_R/suspension_arm_B_R_p/suspension_arm_B_R/Cube_04_p/suspension_arm_B2_R" index="2"]
+transform = Transform( 0.84474, 0.535177, 0, -0.535177, 0.84474, 0, 0, 0, 1, -0.26276, 0.624, -0.0006 )
+
+[node name="wheel_03_R" parent="RootNode (gltf orientation matrix)/RootNode (model correction matrix)/Root/_root_p/body/suspension_axel_R/suspension_arm_B_R_p/suspension_arm_B_R/Cube_04_p/suspension_arm_B2_R/suspension_steer_B_R" index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 2.87296e-06, 0, -2.87296e-06, 1, -0.00049, 0.00124, -0.39949 )
+
+[node name="wheel_02_R" parent="RootNode (gltf orientation matrix)/RootNode (model correction matrix)/Root/_root_p/body/suspension_axel_R/suspension_arm_B_R_p/suspension_arm_B_R/Cube_04_p/suspension_arm_B2_R" index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 2.87296e-06, 0, -2.87296e-06, 1, -0.39392, -0.451, -0.40001 )
+
+[node name="suspension_arm_F_R_p" parent="RootNode (gltf orientation matrix)/RootNode (model correction matrix)/Root/_root_p/body/suspension_axel_R" index="3"]
+transform = Transform( 0.980788, 0, 0.195077, 0, 1, 0, -0.195077, 0, 0.980788, -0.16116, 0, 0.00953 )
+
+[node name="Cube_02_p" parent="RootNode (gltf orientation matrix)/RootNode (model correction matrix)/Root/_root_p/body/suspension_axel_R/suspension_arm_F_R_p/suspension_arm_F_R" index="2"]
+transform = Transform( 0.844704, -0.535234, 0, 0.535234, 0.844704, 0, 0, 0, 1, -0.26284, -0.881, -0.0049 )
+
+[node name="suspension_steer_F_R" parent="RootNode (gltf orientation matrix)/RootNode (model correction matrix)/Root/_root_p/body/suspension_axel_R/suspension_arm_F_R_p/suspension_arm_F_R/Cube_02_p" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0005, 0, -0.23726 )
+
+[node name="wheel_01_R" parent="RootNode (gltf orientation matrix)/RootNode (model correction matrix)/Root/_root_p/body/suspension_axel_R/suspension_arm_F_R_p/suspension_arm_F_R/Cube_02_p/suspension_steer_F_R" index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 2.87296e-06, 0, -2.87296e-06, 1, -0.00039, 9e-05, -0.3996 )
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "Take 01"

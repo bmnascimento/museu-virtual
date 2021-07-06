@@ -2,7 +2,7 @@ Hangar
 Creator: superundead6212
 License: CC Attribution
 Link: https://sketchfab.com/3d-models/hangar-45d2b0e4526a4136bf2f613a6407c94d
-Was modified
+Modified
 
 Moon - Gagarin crater
 Creator: SebastianSosnowski
@@ -20,4 +20,34 @@ Lunar Rover Toy/Model
 Creator: Cameron-Main
 License: CC Attribution
 Link: https://sketchfab.com/3d-models/lunar-rover-toymodel-eae9a5b20d324fe6855fd3c4b37f41b6
+Modified
+
+Mars
+Creator: Akshat
+License: CC Attribution
+Link: https://sketchfab.com/3d-models/mars-9c7bbc64d8c74acfa9ec344c0fc10e1a
 Was not modified
+
+Apollo 11 Command Module (Combined)
+Creator: The Smithsonian Institution
+License: CC Attribution
+Link: https://sketchfab.com/3d-models/apollo-11-command-module-combined-372bb6781922471cada4e0a9bd5c61fb
+Was not modified
+
+Curiosity
+Ingenuity
+https://github.com/nasa/NASA-3D-Resources
+
+"James Webb Space Telescope"
+Creator: ExplorNova Studio
+License: CC Attribution
+Link: https://sketchfab.com/3d-models/james-webb-space-telescope-f9e4b03e63624e7aa050a798b63bc9c4
+Was not modified
+
+Hubble Space Telescope
+Creator: ycq201
+ExplorNova Studio
+License: CC Attribution
+Link: https://sketchfab.com/3d-models/hubble-space-telescope-e668becf33134030ac2de62104cbd23d
+Was not modified
+
