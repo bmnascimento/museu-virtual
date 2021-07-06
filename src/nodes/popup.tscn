@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/popup.gd" type="Script" id=1]
+
+[node name="PopupArea" type="Area"]
+
+[node name="PopupDialog" type="PopupDialog" parent="."]
+margin_left = 63.4324
+margin_top = 336.081
+margin_right = 882.432
+margin_bottom = 563.081
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PopupDialog"]
+margin_left = 23.0
+margin_top = 18.0
+margin_right = 799.0
+margin_bottom = 205.0
+
+[connection signal="body_entered" from="." to="PopupDialog" method="_on_PopupArea_body_entered"]
