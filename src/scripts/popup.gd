@@ -20,10 +20,7 @@ func _on_PopupArea_body_entered(body):
 	if body.is_in_group("player"):
 		popup()
 		#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-<<<<<<< Updated upstream
-=======
 
 
 func _on_Area_body_entered(body):
 	pass # Replace with function body.
->>>>>>> Stashed changes
