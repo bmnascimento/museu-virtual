@@ -37,9 +37,6 @@ func _physics_process(delta):
 		brake = 0.0
 	
 	if Input.is_action_just_pressed("ui_cancel"):
-		if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
-			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-		else:
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		var _error = get_tree().change_scene("res://scenes/space-room/space_room.tscn")
 
 	steering = move_toward(steering, steer_target, STEER_SPEED * delta)

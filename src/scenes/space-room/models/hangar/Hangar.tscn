@@ -23,9 +23,11 @@ extents = Vector3( 31.3, 2, 1 )
 transform = Transform( 0.35, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
 
 [node name="Roof" parent="." index="0"]
+visible = false
 material/0 = SubResource( 1 )
 
 [node name="Railings" parent="." index="1"]
+visible = false
 material/0 = ExtResource( 2 )
 
 [node name="Floor" parent="." index="2"]
