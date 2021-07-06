@@ -1,0 +1,36 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path.s3tc="res://.import/o-lavrador-de-cafe.jpg-17edbfe1ad49b4b4f5b45b4fd573f644.s3tc.stex"
+path.etc2="res://.import/o-lavrador-de-cafe.jpg-17edbfe1ad49b4b4f5b45b4fd573f644.etc2.stex"
+metadata={
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://scenes/art_room/arts/art6/o-lavrador-de-cafe.jpg"
+dest_files=[ "res://.import/o-lavrador-de-cafe.jpg-17edbfe1ad49b4b4f5b45b4fd573f644.s3tc.stex", "res://.import/o-lavrador-de-cafe.jpg-17edbfe1ad49b4b4f5b45b4fd573f644.etc2.stex" ]
+
+[params]
+
+compress/mode=2
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=true
+flags/filter=true
+flags/mipmaps=true
+flags/anisotropic=false
+flags/srgb=1
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0
