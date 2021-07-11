@@ -19,10 +19,10 @@ ambient_light_sky_contribution = 0.0
 [sub_resource type="SpatialMaterial" id=2]
 albedo_color = Color( 0.796078, 0.443137, 0.105882, 1 )
 
-[sub_resource type="BoxShape" id=4]
+[sub_resource type="BoxShape" id=3]
 extents = Vector3( 2.05338, 0.832186, 2.72241 )
 
-[sub_resource type="GIProbeData" id=3]
+[sub_resource type="GIProbeData" id=4]
 bounds = AABB( -15.2772, -4.99992, -15.2409, 30.5544, 9.99984, 30.4818 )
 cell_size = 0.238706
 to_cell_xform = Transform( 4.18925, 0, 0, 0, 4.18925, 0, 0, 0, 4.18925, 64, 20.9459, 63.8479 )
@@ -115,7 +115,7 @@ transform = Transform( 1.54159, 2.49594e-07, -2.98023e-08, 2.56114e-09, 1.8101, 
 
 [node name="CollisionShape" type="CollisionShape" parent="Quadros/Quadro/mandelbrotArea/PopupArea"]
 transform = Transform( 0.638868, 4.61005e-07, -1.86265e-08, 9.8953e-10, 0.570159, 5.96046e-08, 3.35276e-08, -7.45058e-08, 0.634399, 2.3, -5.36442e-07, -1.52969 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="Quadro3" type="CSGBox" parent="Quadros"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.73, 3.311, -10 )
@@ -168,7 +168,7 @@ transform = Transform( 1.54159, 2.49594e-07, -2.98023e-08, 2.56114e-09, 1.8101, 
 
 [node name="CollisionShape" type="CollisionShape" parent="Quadros/Quadro3/stairsArea/PopupArea"]
 transform = Transform( 0.638868, 4.61005e-07, -1.86265e-08, 9.8953e-10, 0.570159, 5.96046e-08, 3.35276e-08, -7.45058e-08, 0.634399, 2.3, -5.36442e-07, -1.52969 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="Quadro4" type="CSGBox" parent="Quadros"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.56, 3.311, -10 )
@@ -221,7 +221,7 @@ transform = Transform( 1.54159, 2.49594e-07, -2.98023e-08, 2.56114e-09, 1.8101, 
 
 [node name="CollisionShape" type="CollisionShape" parent="Quadros/Quadro4/squareArea/PopupArea"]
 transform = Transform( 0.638868, 4.61005e-07, -1.86265e-08, 9.8953e-10, 0.570159, 5.96046e-08, 3.35276e-08, -7.45058e-08, 0.634399, 2.3, -5.36442e-07, -1.52969 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="Quadro2" type="CSGBox" parent="Quadros"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 3.311, -10 )
@@ -273,7 +273,7 @@ transform = Transform( 1.54159, 2.49594e-07, -2.98023e-08, 2.56114e-09, 1.8101, 
 
 [node name="CollisionShape" type="CollisionShape" parent="Quadros/Quadro2/triangleArea/PopupArea"]
 transform = Transform( 0.638868, 4.61005e-07, -1.86265e-08, 9.8953e-10, 0.570159, 5.96046e-08, 3.35276e-08, -7.45058e-08, 0.634399, 2.3, -5.36442e-07, -1.52969 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="Quadro5" type="CSGBox" parent="Quadros"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.158, 3.11067, -4.655 )
@@ -317,12 +317,12 @@ transform = Transform( 1.54159, 2.49594e-07, -2.98023e-08, 2.56114e-09, 1.8101, 
 
 [node name="CollisionShape" type="CollisionShape" parent="Quadros/Quadro5/juliaArea/PopupArea"]
 transform = Transform( 0.638868, 4.61005e-07, -1.86265e-08, 9.8953e-10, 0.570159, 5.96046e-08, 3.35276e-08, -7.45058e-08, 0.634399, 2.3, -5.36442e-07, -1.52969 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="GIProbe" type="GIProbe" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0682774, 3.56675, 0 )
 extents = Vector3( 15.2772, 4.99992, 15.2409 )
-data = SubResource( 3 )
+data = SubResource( 4 )
 
 [node name="Esculturas" type="Node2D" parent="."]
 
@@ -357,7 +357,7 @@ transform = Transform( 1.54159, 2.49594e-07, -2.98023e-08, 2.56114e-09, 1.8101, 
 
 [node name="CollisionShape" type="CollisionShape" parent="Esculturas/mobius/MobiusArea/PopupArea"]
 transform = Transform( 0.638868, 4.61005e-07, -1.86265e-08, 9.8953e-10, 0.570159, 5.96046e-08, 3.35276e-08, -7.45058e-08, 0.634399, 2.3, -5.36442e-07, -1.52969 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="penrose" parent="Esculturas" instance=ExtResource( 9 )]
 transform = Transform( -0.0071144, 0.0990036, 0.0121522, -0.00292789, 0.0119706, -0.0992377, -0.0997036, -0.00741598, 0.00204708, -12.6183, 2.05594, 3.32615 )
@@ -390,7 +390,7 @@ transform = Transform( 9.04147, 4.76837e-07, -1.47521e-06, -1.49012e-08, -13.495
 
 [node name="CollisionShape" type="CollisionShape" parent="Esculturas/penrose/PenroseArea/PopupArea"]
 transform = Transform( 0.638868, 4.61005e-07, -1.86265e-08, 9.8953e-10, 0.570159, 5.96046e-08, 3.35276e-08, -7.45058e-08, 0.634399, 2.3, -5.36442e-07, -1.52969 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [connection signal="body_entered" from="Quadros/Quadro/mandelbrotArea/PopupArea" to="Quadros/Quadro/mandelbrotArea/PopupDialog" method="_on_PopupArea_body_entered"]
 [connection signal="body_entered" from="Quadros/Quadro3/stairsArea/PopupArea" to="Quadros/Quadro3/stairsArea/PopupDialog" method="_on_PopupArea_body_entered"]
